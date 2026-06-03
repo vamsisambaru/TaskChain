@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TaskChain canonical logo (1024x1024).
+
+  Use this file as the source of truth for generating launcher icons:
+    - iOS:     export PNG @ 20, 29, 40, 58, 60, 76, 80, 87, 120, 152, 167, 180, 1024
+    - Android: already covered by the vector adaptive icon (no PNG needed)
+
+  Recommended exporters: figma, sharp, sketch.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#5CCFFF"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- iOS-style rounded square (radius ~22% works for both iOS and Android adaptive) -->
+  <rect x="0" y="0" width="1024" height="1024" rx="220" ry="220" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1024" height="512" rx="220" ry="220" fill="url(#shine)"/>
+
+  <!-- Mark: bold rounded check styled as a chain segment -->
+  <g filter="url(#glow)">
+    <path
+      d="M260 540 L460 720 L760 320"
+      stroke="#FFFFFF"
+      stroke-width="120"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <!-- Center "link" cap so the mark reads as a chain joint, not just a checkmark -->
+    <circle cx="460" cy="720" r="26" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+</svg>
